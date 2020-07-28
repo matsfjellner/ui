@@ -1,5 +1,6 @@
 # UI Test
 ###### UI Test made as a work sample according to specification.
+*Layout branch also according to specification, but actually the same as master (explanation below)*
 The technologies used are ReactJS augmented by SCSS, my first "real" project with React - the JS library I would use comfortably for something like this is BackboneJS, but as it has JQuery as a hard dependency I had to go a different route.
 
 The application initially populates the past people data from a JSON file, and then persists the initial data along with new votes in the browser's localstorage.
