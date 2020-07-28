@@ -1,0 +1,273 @@
+div.people {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 2vw;
+    grid-row-gap: 2vw;
+    width: 100%;
+}
+
+
+div.person {
+
+    height: 0;
+    padding-bottom: 110%;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+
+    >.picture {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: transparent no-repeat 50% 50%/cover;
+    }
+
+    >.info {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+        color: $white;
+        position: absolute;
+        display: flex;
+        flex-flow: column nowrap;
+        height: 100%;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        justify-content: flex-end;
+
+
+        h3 {
+            margin-left: 2.2rem;
+            margin-right: 2.2rem;
+            font-size: 2.75rem;
+            position: relative;
+
+
+            &::after {
+                content: '';
+                position: absolute;
+                width: 2rem;
+                height: 2rem;
+                left: -2.2rem;
+                bottom: 0.5rem;
+                background: $tangerine url(#{$imgPath}thumbs-down.png) 50% 50%/70% 70% no-repeat;
+                transition: background-color $transitionDurationNormal, background-image $transitionDurationNormal;
+            }
+
+            &.hype {
+                &::after {
+                    background-color: $seaGreen;
+                    background-image: url(#{$imgPath}thumbs-up.png);
+                }
+            }
+        }
+
+        .description {
+            margin-left: 2rem;
+            margin-right: 2rem;
+            flex: 0 0 9%;
+        }
+
+        span.thumbs-up, button.thumbs-up {
+            background: $seaGreen url(#{$imgPath}thumbs-up.png) 50% 50%/auto 50% no-repeat;
+            border: 2px solid $seaGreen;
+        }
+
+        span.thumbs-down, button.thumbs-down {
+            background: $tangerine url(#{$imgPath}thumbs-down.png) 50% 50%/auto 50% no-repeat;
+            border: 2px solid $tangerine;
+        }
+
+        a {
+            display: block;
+            box-sizing: border-box;
+            transition: background-color $transitionDurationNormal, border-color $transitionDurationNormal;
+
+            &.thumbs-up {
+                
+            }
+
+            &.thumbs-down {
+                
+            }
+
+        }
+
+        .more {
+            margin-left: 2rem;
+            margin-right: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0;
+            flex: 0 0 9%;
+
+            > p {
+                display: flex;
+                align-items: center;
+
+                button.thumbs-up, button.thumbs-down {
+                    display: block;
+                    height: 2rem;
+                    width: 2rem;
+                    margin-right: 0.5rem;
+
+                    &:focus {
+                        outline: none;
+                    }
+
+                    &.selected {
+                        border-color: $white;
+                    }
+                }
+
+                button:last-of-type {
+                    color: $white;
+                    padding: 0.6rem 1.5rem;
+                    border: 1px solid $white;
+                    text-decoration: none;
+                    background: $black;
+                    transition: background-color $transitionDurationNormal, opacity $transitionDurationNormal;
+
+                    &:not(disabled):hover {
+                        background: rgba($black, 0.5);
+                    }
+
+                    &[disabled] {
+                        opacity: 0.5;
+                    }
+                }
+            }
+
+            .link-report {
+                color: $white;
+                padding: 0.8rem 2rem;
+                border: 1px solid $white;
+                text-decoration: none;
+                background: $black;
+                transition: background-color $transitionDurationNormal;
+
+                &:hover {
+                    background: rgba($black, 0.5);
+                }
+            }
+
+            .tags {
+                font-size: 0.8rem;
+
+                strong {
+                    text-align: right;
+                    display: block;
+                }
+            }
+        }
+
+        nav {
+            margin: 0;
+            display: flex;
+            flex: 0 0 9%;
+            align-items: stretch;
+
+
+            &.votes-bar {
+                flex-flow: row nowrap;
+
+                div:first-of-type {
+                    background-color: rgba($seaGreen, 0.7);
+                    flex: 0 0 var(--percentage);
+                    justify-content: flex-start;
+                }
+
+                div {
+                    background-color: rgba($tangerine, 0.7);
+                    background-blend-mode: multiply;
+                    flex: 0 0 var(--percentage);
+                    z-index: 1;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    margin: 0;
+                    overflow: visible;
+                    transition: flex-basis $transitionDurationNormal;
+                    transition-timing-function: ease-in-out;
+                    
+
+                    > p {
+                        display: flex;
+                        position: absolute;
+                        align-items: center;
+                        margin: 0;
+                    }
+
+                    span.thumbs-up, span.thumbs-down {
+                        display: inline-block;
+                        background-color: transparent;
+                        border-color: transparent;
+                        height: 2rem;
+                        width: 2rem;
+                        margin: 0 0;
+                        background-position: 50% 50%;
+                        background-size: 80% auto;
+                    }
+
+                    span {
+                        font-size: 2rem;
+                    }
+                }
+            }
+
+            
+        }
+    }
+
+}
+
+@media screen and (max-width: $breakpointSmall) {
+
+    div.person {
+        > .info {
+
+            h3 {
+                font-size: 1.5rem;
+                
+
+                &:after {
+                    content: none;
+                }
+            }
+
+            h3, .description, .more {
+                margin-left: 1rem;
+                margin-right: 1rem;
+            }
+
+            .more {
+                .link-report {
+                    padding: 0.5rem;
+                }
+
+                .tags {
+                    display: none;
+                }
+            }
+
+            nav.votes-bar p span {
+                font-size: 1.2rem;
+            }
+        }
+        
+    }
+
+    
+
+}
+
+@media screen and (max-width: $breakpointExtraSmall) {
+    div.person {
+        > .info {
+        }
+    }
+}

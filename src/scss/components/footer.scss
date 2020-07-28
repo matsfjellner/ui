@@ -1,0 +1,65 @@
+footer {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: stretch;
+
+
+    > section {
+        flex: 1 1 auto;
+        background: transparent;
+        width: $canvasWidth;
+        margin: 0 auto;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-content: center;
+
+        a {
+            text-decoration: none;
+            color: $grey20;
+            font-size: 0.8rem;
+            transition: color $transitionDurationNormal;
+
+            &:hover {
+                color: $black;
+            }
+            
+        }
+
+        > nav:first-of-type {
+            flex: 3 0 auto;
+            display: flex;
+            align-items: center;
+
+            a {
+                margin-right: 2rem;
+            }
+        }
+
+        > nav.social-networks {
+            flex: 1 0 auto;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+
+            a {
+                display: block;
+                width: 1.5rem;
+                height: 1.5rem;
+                margin-left: 1rem;
+            }
+
+            a span {
+                display: none;
+            }
+
+            a.facebook-link {
+                background: url(#{$imgPath}icon-facebook.png) no-repeat 50% 50%/contain;
+            }
+
+            a.twitter-link {
+                background: url(#{$imgPath}icon-twitter.png) no-repeat 50% 50%/contain;
+            }
+        }
+    }
+}

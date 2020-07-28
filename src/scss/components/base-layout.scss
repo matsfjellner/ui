@@ -1,0 +1,36 @@
+#root {
+    display: flex;
+    flex-flow: column nowrap;
+
+    > header {
+        position: absolute;
+        height: 12.5vw;
+        width: 100%;
+        z-index: 10;
+        top: 0;
+        left: 0;
+    }
+
+    > main {
+        flex: 1 1 auto;
+    }
+
+    > .secondary {
+        flex: 1 1 auto;
+    }
+
+    > footer {
+        flex: 0 0 70px;
+    }
+}
+
+@media screen and (max-width: $breakpointSmall) {
+    #root {
+        header {
+            flex: 0 0 8vw;
+        }
+    }
+    
+}
+
+
