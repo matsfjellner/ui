@@ -1,0 +1,52 @@
+{
+    "People": [
+        {
+            "id": "534",
+            "name": "Kanye West",
+            "description": "Made iconic album \"Late Registration\", recently registered late for becoming U.S. president. \"I'll be late for that\"..",
+            "category": "Entertainment",
+            "picture": "kanye.jpg",
+            "votes": {
+                "good": 12,
+                "bad": 3
+            },
+            "daysLeft": -34
+        },
+        {
+            "id": "2843",
+            "name": "Mark Zuckerberg",
+            "description": "Wrote a PHP page in his dorm room, became one of the most influential people in the world.",
+            "category": "Business",
+            "picture": "zuckerberg.jpg",
+            "votes": {
+                "good": 2,
+                "bad": 7
+            },
+            "daysLeft": -54
+        },
+        {
+            "id": "923",
+            "name": "Cristina Fernández de Kirchner",
+            "description": "Strong progressive female politician, or corrupt populist going for self?",
+            "category": "Politics",
+            "picture": "kirchner.jpg",
+            "votes": {
+                "good": 3,
+                "bad": 4
+            },
+            "daysLeft": -72
+        },
+        {
+            "id": "686",
+            "name": "Malala Yousafzai",
+            "description": "Received the Nobel Peace Prize by 17, loved by the world.. or only by the West?",
+            "category": "Politics",
+            "picture": "malala.jpg",
+            "votes": {
+                "good": 5,
+                "bad": 1
+            },
+            "daysLeft": -94
+        }
+    ]
+}
